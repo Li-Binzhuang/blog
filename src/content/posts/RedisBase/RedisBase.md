@@ -2,7 +2,7 @@
 title: Redis 基础
 published: 2025-10-11
 description: "Redis深入学习"
-image: "./cover.jpeg"
+image: "./cover.png"
 tags: ["Redis", "中间件"]
 category: Learn
 draft: false

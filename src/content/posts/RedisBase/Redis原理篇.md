@@ -2,7 +2,7 @@
 title: Redis 原理篇
 published: 2025-09-20
 description: "Redis 原理篇"
-image: "./cover.jpeg"
+image: "./cover.png"
 tags: ["Redis", "原理", "中间件", "NoSQL", "C"]
 category: Learn
 draft: false
