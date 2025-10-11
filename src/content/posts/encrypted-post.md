@@ -3,13 +3,11 @@ title: Encrypted Post
 published: 2024-01-15
 description: This is an article for testing the page encryption feature
 encrypted: true
-pinned: true
+pinned: false
 password: "123456"
 tags: ["Test", "Encryption"]
 category: "Technology"
 ---
-
-
 
 This blog template is built with [Astro](https://astro.build/). For the things that are not mentioned in this guide, you may find the answers in the [Astro Docs](https://docs.astro.build/).
 
@@ -29,13 +27,11 @@ draft: false
 
 ![]()
 
-
-
 | Attribute     | Description                                                                                                                                                                                                 |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`       | The title of the post.                                                                                                                                                                                      |
 | `published`   | The date the post was published.                                                                                                                                                                            |
-| `pinned`      | Whether this post is pinned to the top of the post list.                                                                                                                                                   |
+| `pinned`      | Whether this post is pinned to the top of the post list.                                                                                                                                                    |
 | `description` | A short description of the post. Displayed on index page.                                                                                                                                                   |
 | `image`       | The cover image path of the post.<br/>1. Start with `http://` or `https://`: Use web image<br/>2. Start with `/`: For image in `public` dir<br/>3. With none of the prefixes: Relative to the markdown file |
 | `tags`        | The tags of the post.                                                                                                                                                                                       |
@@ -46,8 +42,6 @@ draft: false
 | `draft`       | If this post is still a draft, which won't be displayed.                                                                                                                                                    |
 
 ## Where to Place the Post Files
-
-
 
 Your post files should be placed in `src/content/posts/` directory. You can also create sub-directories to better organize your posts and assets.
 

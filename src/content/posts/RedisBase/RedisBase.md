@@ -6,6 +6,7 @@ image: "./cover.png"
 tags: ["Redis", "中间件"]
 category: Learn
 draft: false
+pinned: true
 ---
 
 ## [#](#概述) 概述

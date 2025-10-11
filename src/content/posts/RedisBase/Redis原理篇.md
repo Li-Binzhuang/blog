@@ -6,6 +6,7 @@ image: "./cover.png"
 tags: ["Redis", "原理", "中间件", "NoSQL", "C"]
 category: Learn
 draft: false
+pinned: true
 ---
 
 ## [#](#_1-前言) 1. 前言
