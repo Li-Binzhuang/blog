@@ -1,3 +1,12 @@
+---
+title: 基于 Sentinel 的熔断与降级机制(Alibaba Sentinel 熔断降级完整指南)
+published: 2025-10-19
+description: 基于 Sentinel 的熔断与降级机制，包括熔断触发条件、降级策略、Sentinel 工作原理等。
+tags: [面经, 快手, Sentinel, 熔断, 降级]
+category: 面经
+draft: false
+---
+
 # 基于 Sentinel 的熔断与降级机制(Alibaba Sentinel 熔断降级完整指南)
 
 ## 一、核心概念
