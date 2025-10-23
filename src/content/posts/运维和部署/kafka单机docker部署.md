@@ -88,7 +88,7 @@ Kafka 客户端（KafkaJS）在连接时会去解析这个主机名。如果这�
 | ❌ Kafka 容器的 `advertised.listeners` 没有配置成可访问的主机名/IP | 客户端拿到的地址无法访问                      |
 | ❌ 网络 `1panel-network` 没有连接 Kafka 客户端容器                 | 导致容器之间无法通过服务名互相访问            |
 
-## 正确部署的 docker-compose 配置
+## -正确部署的 docker-compose 配置-
 
 ```yaml
 version: "3.8"
