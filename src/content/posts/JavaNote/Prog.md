@@ -1,3 +1,13 @@
+---
+title: Java 并发编程学习笔记
+published: 2025-09-20
+description: "涵盖 Java 多线程、并发控制、线程池等并发编程知识"
+image: "./cover.jpeg"
+tags: ["Java", "并发", "多线程", "JUC"]
+category: Java
+draft: false
+---
+
 # JUC
 
 ## 进程
@@ -15465,6 +15475,3 @@ AsynchronousSocketChannel、AsynchronousServerSocketChannel、AsynchronousFileCh
 
 
 ****
-
-
-

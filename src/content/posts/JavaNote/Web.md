@@ -1,3 +1,13 @@
+---
+title: Web 前端学习笔记
+published: 2025-09-20
+description: "涵盖 HTML、CSS 等前端基础知识"
+image: "./cover.jpeg"
+tags: ["HTML", "CSS", "前端"]
+category: Web
+draft: false
+---
+
 # HTML
 
 ## HTML入门

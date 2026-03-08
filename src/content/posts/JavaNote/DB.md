@@ -1,3 +1,13 @@
+---
+title: MySQL 数据库学习笔记
+published: 2025-09-20
+description: "涵盖 MySQL 数据库基础、架构、SQL 操作和优化"
+image: "./cover.jpeg"
+tags: ["MySQL", "数据库", "SQL"]
+category: Database
+draft: false
+---
+
 # MySQL
 
 ## 简介
@@ -16757,7 +16767,3 @@ public JedisPool(GenericObjectPoolConfig poolConfig, String host, int port) {
       }
   }
   ```
-
-  
-
- 

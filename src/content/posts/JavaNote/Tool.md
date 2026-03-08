@@ -1,3 +1,13 @@
+---
+title: 开发工具学习笔记
+published: 2025-09-20
+description: "涵盖 Git 版本控制和 Linux 系统操作"
+image: "./cover.jpeg"
+tags: ["Git", "Linux", "版本控制", "系统操作"]
+category: Tools
+draft: false
+---
+
 # Git
 
 ## Git概述
@@ -4051,5 +4061,3 @@ Docker官方的Docker hub（https://hub.docker.com）是一个用于管理公共
   | 硬盘使用   | 一般为MB           | 一般为GB   |
   | 性能       | 接近原生           | 弱于原生   |
   | 系统支持量 | 单机支持上千个容器 | 一般几十个 |
-
-  

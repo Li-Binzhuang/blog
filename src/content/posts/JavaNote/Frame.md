@@ -1,3 +1,13 @@
+---
+title: 构建工具与网络框架学习笔记
+published: 2025-09-20
+description: "涵盖 Maven 项目管理和 Netty 网络框架"
+image: "./cover.jpeg"
+tags: ["Maven", "Netty", "构建工具", "网络框架"]
+category: Framework
+draft: false
+---
+
 # Maven
 
 ## 基本介绍
@@ -11366,14 +11376,3 @@ Follower：从服务的工作流程，核心函数为 `Follower#followLeader()`
 ### 客户端
 
 ![](https://seazean.oss-cn-beijing.aliyuncs.com/img/Frame/Zookeeper-客户端初始化.png)
-
-
-
-
-
-
-
-
-
-
-

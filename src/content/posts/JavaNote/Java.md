@@ -1,3 +1,13 @@
+---
+title: Java 基础学习笔记
+published: 2025-09-20
+description: "涵盖 Java 核心概念、数据类型、面向对象编程等基础知识"
+image: "./cover.jpeg"
+tags: ["Java", "基础", "面向对象"]
+category: Java
+draft: false
+---
+
 # SE
 
 ## 基础
@@ -17594,4 +17604,3 @@ class MyBloomFilter {
     }
 }
 ```
-
