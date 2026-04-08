@@ -20,7 +20,7 @@ draft: false
 
 ## 引子：那段让我一脸懵的代码
 
-最开始我看到的是这段代码，功能很简单，就是动态调用不同对象的 `sound\(\)` 方法：
+最开始我看到的是这段代码，功能很简单，就是动态调用不同对象的 `sound()` 方法：
 
 ```java
 import java.lang.invoke.MethodHandle;
@@ -80,7 +80,7 @@ hou hou
 
 ---
 
-## 第一个疑问：`MethodHandles\.lookup\(\)` 到底是个啥？
+## 第一个疑问：`MethodHandles.lookup()` 到底是个啥？
 
 我第一个搞不懂的就是这行：
 
@@ -196,7 +196,7 @@ MethodHandle mh = privateLookup.findVirtual(Other.class, "privateMethod", mt);
 
 ## 第二个疑问：MethodType 又是个啥？
 
-搞懂了 Lookup，我又懵了：那 `MethodType\.methodType\(String\.class\)` 这行是干嘛的？
+搞懂了 Lookup，我又懵了：那 `MethodType.methodType(String.class)` 这行是干嘛的？
 
 ### 一句话讲懂：它是方法的「签名模板」
 
@@ -227,9 +227,9 @@ MethodType.methodType( 返回值类型, 参数1类型, 参数2类型... );
 
 ### 注意几个坑
 
-1. 基本类型直接写：`int\.class`、`double\.class`，别用包装类
+1. 基本类型直接写：`int.class`、`double.class`，别用包装类
 
-2. 返回值 `void` 固定写 `void\.class`
+2. 返回值 `void` 固定写 `void.class`
 
 3. 参数顺序必须和方法完全一致，错一个都找不到方法
 
@@ -247,8 +247,8 @@ MethodType.methodType( 返回值类型, 参数1类型, 参数2类型... );
 |---|---|---|
 |**本质**|Java 层模拟调用，每次都要绕路|JVM 原生方法指针，直接调用|
 |**性能**|慢，每次都要做安全检查、参数包装|快，接近原生调用，JIT 能直接优化|
-|**异常处理**|把方法异常包装成 `InvocationTargetException`，要 `getCause\(\)` 才能拿到真实异常|原样抛出异常，方法抛啥它抛啥，甚至能直接抛受检异常|
-|**参数处理**|必须把参数包装成 `Object\[\]` 数组|直接传参，和正常方法调用一样，不需要包装|
+|**异常处理**|把方法异常包装成 `InvocationTargetException`，要 `getCause()` 才能拿到真实异常|原样抛出异常，方法抛啥它抛啥，甚至能直接抛受检异常|
+|**参数处理**|必须把参数包装成 `Object[]` 数组|直接传参，和正常方法调用一样，不需要包装|
 |**调用体验**|繁琐，一堆异常要处理|简洁，就像直接调用方法|
 
 ### 通俗比喻

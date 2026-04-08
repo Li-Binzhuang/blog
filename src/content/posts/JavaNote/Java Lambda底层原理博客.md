@@ -43,7 +43,7 @@ public class LambdaWithParamsDemo {
 
 运行结果也很正常，输出`15`，没毛病。
 
-但当我用 JD\-GUI 打开编译后的 class 文件时，我直接傻了：
+但当我用 JD-GUI 打开编译后的 class 文件时，我直接傻了：
 
 我点开那个`LambdaWithParamsDemo$Calculator`类，发现它居然是个**空接口**！
 
@@ -51,7 +51,7 @@ public class LambdaWithParamsDemo {
 
 - 只有一个抽象方法
 
-- 完全看不到我写的`a \+ b`逻辑！
+- 完全看不到我写的`a + b`逻辑！
 
 **我写的 Lambda 代码去哪了？蒸发了？**
 
@@ -111,7 +111,7 @@ public class com.example.demo.LambdaWithParamsDemo {
 
 4. 返回结果
 
-这不就是我写的`\(a, b\) \-\&gt; a \+ b`吗！
+这不就是我写的`(a, b) -&gt; a + b`吗！
 
 原来 Lambda 的逻辑，被编译器偷偷藏进了**宿主类**的一个私有静态方法里！
 
@@ -134,7 +134,7 @@ Calculator add = new Calculator() {
 };
 ```
 
-编译器会直接生成一个新的 class 文件：`LambdaWithParamsDemo$1\.class`
+编译器会直接生成一个新的 class 文件：`LambdaWithParamsDemo$1.class`
 
 - 这个文件会被写到磁盘上
 
@@ -206,9 +206,9 @@ java.lang.invoke.LambdaMetafactory.metafactory
 
 1. **要实现的接口**：`Calculator`
 
-2. **接口的方法签名**：`calculate\(int,int\)`
+2. **接口的方法签名**：`calculate(int,int)`
 
-3. **真正要执行的逻辑**：宿主类的`lambda$main$0\(int,int\)`
+3. **真正要执行的逻辑**：宿主类的`lambda$main$0(int,int)`
 
 拿到这三个信息，它就知道了：
 
@@ -283,7 +283,7 @@ Calculator add = (Calculator) lambdaClass.newInstance();
 ## 五、灵魂拷问：为什么要绕这么大一圈？
 
 看到这里你肯定会问：
-**这也太麻烦了吧！直接调用**\\*\\*`lambda$main$0\(10,5\)`\*\***不行吗？为什么非要搞个代理类？**
+**这也太麻烦了吧！直接调用`lambda$main$0(10,5)`不行吗？为什么非要搞个代理类？**
 
 答案很简单：**Java 的语法规则不允许！**
 
@@ -321,7 +321,7 @@ Java 的语法规定死了：**接口类型的变量，必须存放一个「实�
 
 |对比项|匿名内部类|Lambda 表达式|
 |---|---|---|
-|编译期|生成独立的`\.class`文件，写到磁盘|不生成新文件，Lambda 逻辑藏在宿主类里|
+|编译期|生成独立的`.class`文件，写到磁盘|不生成新文件，Lambda 逻辑藏在宿主类里|
 |类加载|类加载时就加载匿名类，每个 Lambda 一个类|第一次调用时才动态生成代理类，可复用|
 |内存占用|每个匿名类都是独立的类，容易类膨胀|代理类极轻量，只有一个转发方法|
 |性能|加载慢，调用有额外开销|加载快，JIT 更容易优化|
@@ -369,7 +369,7 @@ final class LambdaWithParamsDemo$$Lambda$1 implements Calculator {
 
 到这里，整个 Lambda 的运行流程你就彻底懂了，我们来串一遍：
 
-1. **你写代码**：`Calculator add = \(a,b\)\-\&gt;a\+b`
+1. **你写代码**：`Calculator add = (a,b)->a+b;`
 
 2. **编译期**：编译器把 Lambda 编译成宿主类的私有静态方法`lambda$main$0`，同时生成`invokedynamic`指令
 
@@ -383,7 +383,7 @@ final class LambdaWithParamsDemo$$Lambda$1 implements Calculator {
 
     - 创建代理实例，赋值给`add`
 
-4. **后续调用**：`add\.calculate\(10,5\)` → 代理类转发调用`lambda$main$0` → 得到结果
+4. **后续调用**：`add.calculate(10,5)` → 代理类转发调用`lambda$main$0` → 得到结果
 
 这就是为什么你最开始反编译会看到一个 “空类”—— 因为你看到的只是那个接口，真正的实现类，藏在内存里，你看不到而已。
 
@@ -532,9 +532,9 @@ c.accept(1); // 完全没问题！
 
 你捕获的`list`变量，是一个对象引用，拷贝的是这个引用的值（也就是对象的内存地址）。
 
-- 你不能改`list`这个引用本身（比如`list = new ArrayList\&lt;\&gt;\(\)`），因为那会改变变量的值，违反 effectively final
+- 你不能改`list`这个引用本身（比如`list = new ArrayList<>()`），因为那会改变变量的值，违反 effectively final
 
-- 但是你可以改引用指向的对象的内容（比如`list\.add\(\)`），因为这没改引用本身，只是改了对象里的东西！
+- 但是你可以改引用指向的对象的内容（比如`list.add()`），因为这没改引用本身，只是改了对象里的东西！
 
 这就是为什么对象的内容可以改，但是变量引用不能改的原因。
 
